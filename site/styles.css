@@ -1,5 +1,5 @@
 :root {
-  --background: #e8e5de;
+  --background: #F5F5F5;
   --surface: #f6f3ec;
   --surface-strong: #dedbd3;
   --text: #242521;
@@ -88,7 +88,7 @@ audio:focus-visible {
 
 .site-name {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-decoration: none;
 }
