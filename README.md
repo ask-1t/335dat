@@ -1,133 +1,94 @@
-# 音楽ポートフォリオ・スターター
+# 33.5℃ 音楽カタログ自動生成版
 
-GitHub Pagesで公開できる、依存ライブラリ不要の静的サイトです。
-ブラウザ標準の音声プレイヤー、MP3ダウンロード、作品カタログ、
-スマートフォン向けレイアウトを含みます。
+アルバムフォルダを`albums`へ追加するだけで、GitHub Pagesのカタログを
+自動生成するサイト一式です。HTMLへ作品を1件ずつ書く必要はありません。
 
-## 最初に変更する場所
+同梱した「Dear Sydney」で、以下を確認済みです。
 
-`index.html`をテキストエディタで開き、以下を検索して置き換えます。
+- AAC-LCのM4Aをそのまま再生・ダウンロード
+- M4Aから曲名、アーティスト、アルバム、曲順、年、再生時間を取得
+- 各フォルダの`cover.png`を自動認識
+- 2084×2084・約5.4MBのPNGを、サイト用WebPへ自動縮小
+- 日本語、記号、空白を含むフォルダ名を安全な公開パスへ変換
 
-- `ARTIST NAME`：アーティスト名
-- `hello@example.com`：問い合わせ先
-- `First Collection`、`Second Collection`：作品名
-- 作品説明、曲名、再生時間、発表年、カタログ番号
+## ふだんの更新方法
 
-ページ上部のタイトルと検索結果に出る説明は、`<head>`内の
-`<title>`と`meta name="description"`で変更できます。
+1. 新しいアルバムフォルダを`albums`へ入れます。
+2. GitHub Desktopで「Commit to main」を押します。
+3. 「Push origin」を押します。
+4. 数分待つとサイトが更新されます。
 
-## MP3の差し替え
+`cover`のリネーム、M4AからMP3への変換、HTML編集は不要です。
 
-1. `audio`フォルダのサンプルMP3を削除または残したままにします。
-2. 自分のMP3を`audio`フォルダに入れます。
-3. `index.html`内のファイル名を変更します。
+## 最初の1回だけ行う設定
 
-1曲につき、同じファイル名を次の2か所へ記入します。
+現在公開中のリポジトリの中身を、このフォルダの中身で置き換えます。
+念のため、現在のリポジトリはZIPでバックアップしてから進めてください。
 
-```html
-<source src="audio/01-first-light.mp3" type="audio/mpeg">
-<a class="download-link" href="audio/01-first-light.mp3" download>
-```
+GitHubでリポジトリの`Settings`→`Pages`を開き、
+「Build and deployment」の「Source」を`GitHub Actions`へ変更します。
 
-ファイル名は、半角英数字・数字・ハイフンを推奨します。
+ファイルをGitHub Desktopで送ると、上部の`Actions`に
+「Build and deploy music catalog」が表示されます。緑のチェックになれば完了です。
 
-## ジャケットの差し替え
+## サイト名や説明を変更する
 
-1. JPEG、PNG、WebP、SVGの画像を`images`フォルダに入れます。
-2. `index.html`の画像ファイル名と代替テキストを変更します。
+`site/config.json`だけを編集します。
 
-```html
-<img
-  src="images/your-cover.jpg"
-  alt="作品名のジャケット"
-  width="1200"
-  height="1200"
->
-```
-
-正方形・1200×1200px前後が扱いやすい大きさです。
-
-## 曲を追加する
-
-`index.html`内の`<li class="track">`から対応する`</li>`までを複製し、
-曲番号、曲名、時間、MP3のファイル名を変更します。
-
-## 作品を追加する
-
-`index.html`内の`<article class="release">`から対応する`</article>`までを
-複製し、ジャケット、作品情報、収録曲を変更します。
-
-## 制作支援リンクを有効にする
-
-`index.html`の`id="support"`が付いたsectionを探します。
-
-1. `<section ... hidden>`の`hidden`だけを削除します。
-2. `https://example.com/support`を実際のStripe Payment Linksなどに変更します。
-3. 上部ナビゲーションにも表示する場合は、Aboutのリンクの後に
-   `<a href="#support">Support</a>`を追加します。
-
-決済情報はGitHub Pages上で入力させず、決済サービスのページへ移動させてください。
-
-## 配色を変更する
-
-`styles.css`先頭の色だけを変更すると、全体の配色が変わります。
-
-```css
-:root {
-  --background: #e8e5de;
-  --surface: #f6f3ec;
-  --text: #242521;
-  --muted: #686b63;
-  --accent: #4f6255;
-  --border: #cac7be;
+```json
+{
+  "siteTitle": "33.5℃",
+  "tagline": "Music for quiet moments.",
+  "intro": "サイト上部の説明",
+  "about": "プロフィール",
+  "contactEmail": "",
+  "supportUrl": "",
+  "copyrightHolder": "33.5℃"
 }
 ```
 
-## 手元で確認する
+メールアドレスや支援URLを空欄にすると、その項目は表示されません。
 
-最も簡単なのは`index.html`をダブルクリックしてブラウザで開く方法です。
-ブラウザによる違いを避けるには、このフォルダで次のコマンドを実行します。
-
-```sh
-python3 -m http.server 8000
-```
-
-その後、ブラウザで`http://localhost:8000`を開きます。
-
-## GitHub Pagesで公開する
-
-1. GitHubに公開リポジトリを作ります。
-2. このREADMEがあるフォルダの「中身」をリポジトリ直下へアップロードします。
-3. リポジトリの`Settings`→`Pages`を開きます。
-4. Sourceを`Deploy from a branch`にします。
-5. Branchを`main`、フォルダを`/(root)`にして保存します。
-
-リポジトリ名を`ユーザー名.github.io`にすると、公開URLは
-`https://ユーザー名.github.io/`になります。
-
-## ファイル一覧
+## アルバムフォルダの規則
 
 ```text
-index.html              サイト本体
-styles.css              色・文字・レイアウト
-script.js               同時再生防止と年号の自動更新
-404.html                ページが見つからない場合の表示
-favicon.svg             ブラウザタブのアイコン
-robots.txt              検索エンジン向け設定
-.nojekyll               GitHub Pages向け設定
-images/                 ジャケット画像
-audio/                  MP3ファイル
+albums/
+├── アルバム名A/
+│   ├── cover.png
+│   ├── 曲1.m4a
+│   └── 曲2.m4a
+└── アルバム名B/
+    ├── cover.jpg
+    └── 曲1.m4a
 ```
 
-## 公開前チェック
+- `cover.jpg`、`cover.png`、`cover.webp`などを自動認識します。
+- アルバムごとに同じ`cover`という名前で構いません。
+- M4AとMP3を認識します。
+- 曲順は埋め込み情報を優先し、なければファイル名の数字を使用します。
+- アルバム名や曲名は埋め込み情報を優先します。
+- `description.txt`を入れると作品説明として表示します。
+- ジャケットがない場合は、M4Aの埋め込み画像を探します。
 
-- サンプル音源を自分のMP3へ差し替えた
-- アーティスト名、作品名、説明、メールアドレスを変更した
-- PCとスマートフォンで全曲を再生した
-- ダウンロードボタンを確認した
-- 自分が公開権を持つ音源・画像だけを使用した
-- 著作権・再利用条件を記載した
-- 支援リンクを使う場合、実際に少額決済をテストした
+## 容量について
 
-MP3は公開リポジトリから誰でも取得できます。有料作品は試聴版だけを置き、
-購入者限定ファイルの配布には外部のデジタル商品販売サービスを使用してください。
+GitHub Pagesの公開サイトは1GBが目安です。アルバムフォルダをすべて追加する前に、
+音源フォルダ全体の容量を確認してください。ジャケットは自動で軽量化されますが、
+M4Aは音質を変えず、そのまま公開します。
+
+## 手元で動作確認する場合
+
+Node.js 24をインストール済みなら、次を実行できます。
+
+```sh
+npm install
+npm run build
+npx serve dist
+```
+
+通常はGitHub Actionsが代わりに実行するため、手元で行う必要はありません。
+
+## 重要
+
+`albums`に入れたM4Aは公開ファイルになります。有料購入者だけへ渡す音源には
+使用しないでください。また、公開権を持つ音源とアートワークだけを追加してください。

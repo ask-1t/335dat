@@ -1,0 +1,14 @@
+{
+  "name": "music-portfolio-auto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-catalog.mjs",
+    "preview": "npm run build && npx serve dist"
+  },
+  "dependencies": {
+    "music-metadata": "11.14.0",
+    "sharp": "0.35.3"
+  }
+}
