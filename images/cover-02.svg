@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title description">
+  <title id="title">Second Collection placeholder cover</title>
+  <desc id="description">暗い青灰色の背景に細い線が重なる幾何学模様</desc>
+  <rect width="1200" height="1200" fill="#333a3c"/>
+  <g fill="none" stroke="#c7bca8" stroke-width="2" opacity=".72">
+    <path d="M-80 260 1280 940"/>
+    <path d="M-80 430 1280 1110"/>
+    <path d="M-80 90 1280 770"/>
+    <circle cx="840" cy="370" r="180"/>
+  </g>
+  <rect x="90" y="790" width="560" height="210" fill="#c7bca8"/>
+  <text x="126" y="875" fill="#333a3c" font-family="Georgia,serif" font-size="44">SECOND</text>
+  <text x="126" y="935" fill="#333a3c" font-family="Georgia,serif" font-size="44">COLLECTION</text>
+  <text x="94" y="1100" fill="#e5e0d7" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">ARTIST NAME · CAT-002</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title description">
+  <title id="title">First Collection placeholder cover</title>
+  <desc id="description">落ち着いた緑とベージュの幾何学模様</desc>
+  <rect width="1200" height="1200" fill="#d9d5ca"/>
+  <circle cx="600" cy="600" r="360" fill="none" stroke="#536357" stroke-width="2"/>
+  <circle cx="600" cy="600" r="220" fill="#536357" opacity=".92"/>
+  <path d="M0 920C280 760 430 1030 720 890c190-91 300-64 480 16v294H0Z" fill="#a7aa9e" opacity=".72"/>
+  <text x="72" y="104" fill="#292b27" font-family="Georgia,serif" font-size="36" letter-spacing="7">FIRST COLLECTION</text>
+  <text x="76" y="1128" fill="#292b27" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">ARTIST NAME · CAT-001</text>
+</svg>
