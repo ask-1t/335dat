@@ -125,7 +125,7 @@ audio:focus-visible {
 }
 
 .hero h1 {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.2rem, 10vw, 7.5rem);
