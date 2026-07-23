@@ -135,6 +135,10 @@ audio:focus-visible {
   line-height: 1;
 }
 
+.hero .eyebrow {
+  margin-bottom: 8px;
+}
+
 .hero-copy {
   max-width: 630px;
   margin: 36px 0 20px;
