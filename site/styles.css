@@ -128,10 +128,10 @@ audio:focus-visible {
   max-width: 900px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -0.035em;
+  line-height: 1;
 }
 
 .hero-copy {
