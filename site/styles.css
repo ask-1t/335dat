@@ -128,8 +128,8 @@ audio:focus-visible {
   max-width: 900px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.2rem, 10vw, 7.5rem);
-  font-weight: 300;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.92;
 }
