@@ -112,7 +112,7 @@ audio:focus-visible {
   min-height: auto;
   display: grid;
   align-content: center;
-  padding: 84px 0 32px;
+  padding: 52px 0 32px;
 }
 
 .eyebrow,
@@ -408,7 +408,7 @@ audio {
 
 .hero {
   min-height: auto;
-  padding: 64px 0 24px;
+  padding: 40px 0 24px;
 }
 
 .catalog {
