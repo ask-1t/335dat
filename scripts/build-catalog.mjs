@@ -181,15 +181,16 @@ const processAlbum = async (directoryName) => {
       : `${String(trackNumber).padStart(2, "0")}${extension}`;
     await copyFile(parsed.filePath, path.join(releaseOutput, outputName));
 
-tracks.push({
-  number: trackNumber,
-  title: parsed.metadata.common.title || cleanFilenameTitle(parsed.filename),
-  duration: parsed.metadata.format.duration ?? null,
-  src: `media/${id}/${outputName}`,
-  mime: mimeFor(extension),
-  format: formatFor(extension),
-  lyrics: await readLyrics(parsed.filePath),
-});
+    tracks.push({
+      number: trackNumber,
+      title: parsed.metadata.common.title || cleanFilenameTitle(parsed.filename),
+      duration: parsed.metadata.format.duration ?? null,
+      src: `media/${id}/${outputName}`,
+      mime: mimeFor(extension),
+      format: formatFor(extension),
+      lyrics: await readLyrics(parsed.filePath),
+    });
+  }
 
   const coverName = await createCover({
     albumPath,
