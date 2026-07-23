@@ -152,7 +152,7 @@ const loadCatalog = async () => {
     summaryElement.textContent = summary;
     summaryElement.dataset.defaultText = summary;
     activateSinglePlayer();
-    activateSearch();
+    if (searchElement) activateSearch();
   } catch (error) {
     console.error(error);
     catalogElement.replaceChildren(
