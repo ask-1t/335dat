@@ -38,13 +38,26 @@ const createTrack = (track) => {
   source.type = track.mime;
   player.append(source);
 
-  const download = element("a", "download-link", "↓  ダウンロード");
-  download.href = track.src;
-  download.download = "";
+const download = element("a", "download-link", "ダウンロード");
+download.href = track.src;
+download.download = "";
 
-  item.append(heading, player, download);
-  return item;
-};
+const utilities = element("div", "track-utilities");
+utilities.append(download);
+
+if (track.lyrics) {
+  const lyrics = document.createElement("details");
+  lyrics.className = "lyrics";
+
+  const summary = element("summary", "", "歌詞");
+  const lyricsText = element("div", "lyrics-text", track.lyrics);
+
+  lyrics.append(summary, lyricsText);
+  utilities.append(lyrics);
+}
+
+item.append(heading, player, utilities);
+return item;
 
 const createRelease = (release) => {
   const article = element("article", "release");
