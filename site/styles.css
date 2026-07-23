@@ -318,6 +318,53 @@ audio {
   font-weight: 700;
 }
 
+.track-utilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 20px;
+}
+
+.lyrics {
+  width: auto;
+}
+
+.lyrics[open] {
+  flex-basis: 100%;
+}
+
+.lyrics summary {
+  width: fit-content;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.lyrics summary::-webkit-details-marker {
+  display: none;
+}
+
+.lyrics summary::before {
+  content: "＋  ";
+}
+
+.lyrics[open] summary::before {
+  content: "−  ";
+}
+
+.lyrics-text {
+  margin-top: 16px;
+  padding: 18px 20px;
+  color: var(--text);
+  background: var(--background);
+  border-left: 2px solid var(--accent);
+  font-size: 0.92rem;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
 .release-notes {
   margin: 30px 0 0;
   color: var(--muted);
