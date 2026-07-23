@@ -38,7 +38,7 @@ const createTrack = (track) => {
   source.type = track.mime;
   player.append(source);
 
-const download = element("a", "download-link", "ダウンロード");
+const download = element("a", "download-link", "DL");
 download.href = track.src;
 download.download = "";
 
