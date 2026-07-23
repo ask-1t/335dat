@@ -58,6 +58,7 @@ if (track.lyrics) {
 
 item.append(heading, player, utilities);
 return item;
+};
 
 const createRelease = (release) => {
   const article = element("article", "release");
