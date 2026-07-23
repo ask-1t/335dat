@@ -109,10 +109,11 @@ audio:focus-visible {
 }
 
 .hero {
-  min-height: 68vh;
+  min-height: auto;
   display: grid;
-  align-content: center;
-  padding-block: 84px;
+  align-content: start;
+  padding-top: 48px;
+  padding-bottom: 84px;
 }
 
 .eyebrow,
