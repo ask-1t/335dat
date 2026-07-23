@@ -245,12 +245,39 @@ await mkdir(mediaRoot, { recursive: true });
 await writeFile(path.join(outputRoot, ".nojekyll"), "");
 
 const entries = await readdir(albumsRoot, { withFileTypes: true });
-const directoryNames = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(collator.compare);
-const releases = (await Promise.all(directoryNames.map(processAlbum))).filter(Boolean);
 
-releases.sort((a, b) =>
-  (b.year ?? 0) - (a.year ?? 0) || collator.compare(a.title, b.title)
+const orderPath = path.join(albumsRoot, "order.txt");
+const preferredOrder = await exists(orderPath)
+  ? (await readFile(orderPath, "utf8"))
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean)
+  : [];
+
+const orderIndex = new Map(
+  preferredOrder.map((name, index) => [name, index])
 );
+
+const directoryNames = entries
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort((a, b) => {
+    const aOrder = orderIndex.get(a);
+    const bOrder = orderIndex.get(b);
+
+    if (aOrder !== undefined || bOrder !== undefined) {
+      return (
+        (aOrder ?? Number.MAX_SAFE_INTEGER) -
+        (bOrder ?? Number.MAX_SAFE_INTEGER)
+      );
+    }
+
+    return collator.compare(a, b);
+  });
+
+const releases = (
+  await Promise.all(directoryNames.map(processAlbum))
+).filter(Boolean);
 
 const catalog = {
   generatedAt: new Date().toISOString(),
