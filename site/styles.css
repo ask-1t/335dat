@@ -112,7 +112,7 @@ audio:focus-visible {
   min-height: auto;
   display: grid;
   align-content: center;
-  padding: 52px 0 32px;
+  padding: 48px 0 32px;
 }
 
 .eyebrow,
@@ -128,7 +128,7 @@ audio:focus-visible {
   max-width: 900px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.8rem, 8vw, 6.5rem);
+font-size: clamp(2.4rem, 7vw, 5.5rem);
   font-weight: 400;
   letter-spacing: -0.035em;
   line-height: 1;
@@ -408,7 +408,7 @@ audio {
 
 .hero {
   min-height: auto;
-  padding: 40px 0 24px;
+  padding: 38px 0 24px;
 }
 
 .catalog {
