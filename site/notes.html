@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{SITE_TITLE}}の制作ノートと近況">
+  <meta name="theme-color" content="#e8e5de">
+  <title>NOTES — {{SITE_TITLE}}</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="./" aria-label="トップページ">{{SITE_TITLE}}</a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="index.html#catalog">Catalog</a>
+        <a href="annex.html">Annex</a>
+        <a href="story.html">Story</a>
+        <a href="#notes" aria-current="page">Notes</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero notes-hero" aria-labelledby="notes-page-title">
+      <p class="eyebrow">JOURNAL｜制作と日々の記録</p>
+      <h1 id="notes-page-title">NOTES</h1>
+      <p class="hero-copy">
+        制作のこと、音楽の周辺、折々の記録を置いています。
+      </p>
+    </section>
+
+    <section id="notes" class="notes" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <p class="eyebrow">LATEST NOTES</p>
+        <h2 id="notes-title">ノート一覧</h2>
+        <p id="notes-summary">記事を読み込んでいます。</p>
+      </div>
+
+      <div id="notes-list" class="notes-list" aria-live="polite">
+        <p class="loading-message">Notesを読み込んでいます。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{YEAR}} {{COPYRIGHT_HOLDER}}</p>
+    <p>All rights reserved.</p>
+  </footer>
+
+  <script src="notes.js"></script>
+</body>
+</html>

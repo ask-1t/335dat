@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{SITE_TITLE}}の音楽とつながる物語">
+  <meta name="theme-color" content="#e8e5de">
+  <title>STORY — {{SITE_TITLE}}</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="./" aria-label="トップページ">{{SITE_TITLE}}</a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="index.html#catalog">Catalog</a>
+        <a href="annex.html">Annex</a>
+        <a href="#story" aria-current="page">Story</a>
+        <a href="notes.html">Notes</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero story-hero" aria-labelledby="story-page-title">
+      <p class="eyebrow">FICTION ARCHIVE｜音楽とつながる物語</p>
+      <h1 id="story-page-title">STORY</h1>
+      <p class="hero-copy">
+        音楽と同じ風景から生まれた小説を収めています。
+      </p>
+    </section>
+
+    <section id="story" class="story" aria-labelledby="story-title">
+      <div class="section-heading">
+        <p class="eyebrow">FICTION</p>
+        <h2 id="story-title">物語一覧</h2>
+        <p id="story-summary">作品情報を読み込んでいます。</p>
+      </div>
+
+      <div id="story-list" class="story-list" aria-live="polite">
+        <p class="loading-message">Storyを読み込んでいます。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{YEAR}} {{COPYRIGHT_HOLDER}}</p>
+    <p>All rights reserved.</p>
+  </footer>
+
+  <script src="story.js"></script>
+</body>
+</html>
