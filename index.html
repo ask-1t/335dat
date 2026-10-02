@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{INTRO}}">
+  <meta name="theme-color" content="#e8e5de">
+  <title>{{SITE_TITLE}} </title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="./" aria-label="トップページ">{{SITE_TITLE}}</a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="#catalog">Catalog</a>
+        <a href="annex.html">Annex</a>
+        <a href="story.html">Story</a>
+        <a href="notes.html">Notes</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">INDEPENDENT MUSIC ARCHIVE｜個人制作音楽</p>
+      <h1 id="hero-title">{{TAGLINE}}</h1>
+      <p class="hero-copy">{{INTRO}}</p>
+    </section>
+
+    <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <p class="eyebrow">CATALOG</p>
+        <p id="catalog-summary">作品情報を読み込んでいます。</p>
+      </div>
+
+      <div id="catalog-list" aria-live="polite">
+        <p class="loading-message">カタログを読み込んでいます。</p>
+      </div>
+    </section>
+
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2 id="about-title">{{SITE_TITLE}}</h2>
+      </div>
+      <div class="about-copy">
+        <p>{{ABOUT}}</p>
+        {{CONTACT_BLOCK}}
+      </div>
+    </section>
+
+    {{SUPPORT_BLOCK}}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{YEAR}} {{COPYRIGHT_HOLDER}}</p>
+    <p>All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
