@@ -39,6 +39,9 @@ jobs:
       - name: Build catalog
         run: npm run build
 
+      - name: Verify build output
+        run: node scripts/verify-build.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
